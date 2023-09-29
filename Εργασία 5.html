@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Istoselida 5</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+    $('#btn').click(
+        function(){
+            
+          name = $('#my_name').val();
+          surname = $('#my_surname').val();
+    
+            if((name.length==0) ||  (surname.length==0 ))
+            {
+               
+              alert("Εισάγετε ξανά τα στοιχεία σας!");
+            } else {
+             
+            $('#open1').append("<br> <br> Καλώς Όρισες &nbsp;"+name); 
+            $('#open1').append(" &nbsp; "+surname+ "!"); 
+            }
+    
+    });
+    
+    }
+    );
+  
+    </script>
+</head>
+<body>
+<div  id="open1" class="container">
+  <font face="Times New Roman" > <h1>Για να εισέλθετε πατήστε το κουμπί Είσοδος! </h1> </font>
+  <!-- Trigger the modal with a button -->
+  <font face="Times New Roman"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"style="background-color:#006666; border: 1px; #000 solid;">Είσοδος</button></font>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" style="background-color:#006666;">
+    <div class="modal-dialog">  
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: #ffe6ff;">
+        <div class="modal-header">
+          <button type="button"   class="close" data-dismiss="modal">&times;</button>
+          <font face="Times New Roman">  <h4 class="modal-title">Εισάγετε τα στοιχεία σας!</h4> </font>
+          
+        </div>
+        <div class="modal-body">
+          <font face="Times New Roman" size="3">  <form>
+                Εισάγετε το όνομά σας:
+                <input type="text" name="my_name" id="my_name"><br><br>
+                Εισάγετε το επώνυμό σας
+                <input type="text" name="my_surname" id="my_surname"><br><br>
+                </form> </font>
+        </div>
+        <div class="modal-footer">
+          <font face="Times New Roman">  <button id="btn" type="button" class="btn btn-default" data-dismiss="modal"  style="background-color:#006666; color:white;">Close</button> </font>
+       
+        </div>
+        
+      </div>
+      
+    </div>
+   
+  </div>
+  
+</div>
+
+
+  </div>
+</body>
+</html>

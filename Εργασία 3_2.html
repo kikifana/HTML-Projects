@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="utf8">
+<style>
+.my_div {
+	padding:20px;
+	color:red;
+	background-color:yellow;
+	border:1px #000 solid;
+	margin-bottom:50px;
+}
+</style>
+<script>
+function my_calc(){
+	num1 = document.getElementById("num1").value;
+	num2 = document.getElementById("num2").value;
+	prakseis = document.getElementById("praksi").value;
+	
+	if(num1.length > 0 && num2.length > 0){
+		if(prakseis==="+"){
+		num3 = parseFloat(num1) + parseFloat(num2);
+		var num3=parseFloat(num3).toFixed(2);
+		document.getElementById("results").innerHTML = num3;
+		
+		}
+		if(prakseis==="-") {
+			num3=parseFloat(num1) - parseFloat(num2);
+			var num3=parseFloat(num3).toFixed(2);
+			document.getElementById("results").innerHTML = num3;
+			
+		}
+		if(prakseis==="*") {
+			num3=parseFloat(num1) * parseFloat(num2);
+			var num3=parseFloat(num3).toFixed(2);
+			document.getElementById("results").innerHTML = num3;
+			
+		}
+		if(prakseis==="/") {
+			if(num2==0){
+			alert("Δεν επιτρέπεται διαίρεση με το 0!"); }
+				else{
+			num3=parseFloat(num1) / parseFloat(num2);
+			var num3=parseFloat(num3).toFixed(2);
+				document.getElementById("results").innerHTML = num3;
+				
+				}
+				}
+	}
+	return false;
+}
+</script>
+</head>
+<body>
+<div id="results" class="my_div"></div>
+<form name="my_form2" onsubmit="return my_calc();">
+<input type="text" name="num1" id="num1">
+<select id="praksi">
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="*">*</option>
+<option value="/">/</option>
+</select>
+<input type="text" name="num2" id="num2">
+<input type="submit" value="Αποτέλεσμα">
+</form>
+</body>
+</html>
